@@ -8,12 +8,14 @@ import { Component, OnInit, Input } from '@angular/core';
 export class DocumentoEstruturadoComponent implements OnInit {
 
   @Input() panelHeading: string;
-  elementosEstruturados = [];
+  @Input() panelFooter: string;
+  structuredElements = [];
 
   constructor() {
 
-    this.elementosEstruturados.push(1, 2, 3);
-
+    for(var i = 0; i < 25; i++){
+      this.structuredElements.push(i + 1);
+    }
    }
 
   ngOnInit() {
