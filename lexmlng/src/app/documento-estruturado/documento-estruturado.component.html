@@ -1,10 +1,11 @@
-<div class="panel panel-info">
-  <div class="panel-heading">
-      <h3 class="panel-title">{{panelHeading}}</h3>    
+<div class="panel panel-info" [id]="panelName">
+  <div class="panel-heading" [id]="panelName + 'Header'">
+      <h3 class="panel-title">{{panelHeading}} <button class="btn btn-sm btn-info" (click)="printElement()">printElement</button></h3>   
   </div>
-  <div class="panel-body" style="overflow-y: scroll;height: 88vh;">
-      <lexml-elemento-estruturado *ngFor="let element of structuredElements">
+  <div class="panel-body doc-body" [ngStyle]="{'height': bodyHeight}" [id]="panelName + 'Body'">
+      <lexml-elemento-estruturado *ngFor="let element of structuredElements" [elementId]="'Element'+element">
+
       </lexml-elemento-estruturado>
   </div>
-  <div class="panel-footer">{{panelFooter}}</div>
+  <div class="panel-footer" [id]="panelName + 'Footer'">{{panelFooter}}</div>
 </div>

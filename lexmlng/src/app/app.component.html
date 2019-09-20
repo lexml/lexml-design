@@ -1,15 +1,13 @@
 <div class="container-fluid">
     <div class="row">
-        <lexml-documento-estruturado [panelHeading]="title" [panelFooter]="footer" class="col-xs-6">
+        <lexml-documento-estruturado [panelName]="'panel1'" [panelHeading]="title" [panelFooter]="footer" 
+            [boundariesRect]="boundariesRect" class="col-xs-6">
 
         </lexml-documento-estruturado>
 
-        <lexml-documento-estruturado [panelHeading]="title" [panelFooter]="footer" class="col-xs-6">
+        <lexml-documento-estruturado [panelName]="'panel2'" [panelHeading]="title" [panelFooter]="footer"
+            [boundariesRect]="boundariesRect" class="col-xs-6">
 
         </lexml-documento-estruturado>
-<!-- 
-        <lexml-documento-estruturado [panelHeading]="title" [panelFooter]="footer" class="col-xs-4">
-
-        </lexml-documento-estruturado> -->
     </div>
 </div>
