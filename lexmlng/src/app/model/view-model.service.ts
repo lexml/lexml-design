@@ -14,6 +14,10 @@ export class ViewModelService {
     this._boundariesRects[key] = boundariesRect;
   }
 
+  deleteBoundaryRect(key: string) {
+    
+  }
+
   getBoundaryRect(key: string) {
     return this._boundariesRects[key];
   }

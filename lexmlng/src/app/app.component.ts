@@ -1,4 +1,4 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, OnChanges, DoCheck, AfterViewChecked, HostListener } from '@angular/core';
 import { BoundariesRect } from './model/view-model.service';
 
 @Component({
@@ -12,6 +12,14 @@ export class AppComponent{
   boundariesRect: BoundariesRect;
 
   constructor() {
+    this.boundariesRect = new BoundariesRect(0, 0, window.innerWidth, window.innerHeight);
+  }
+
+  /**
+   * Adjust window after resize.
+   */
+  @HostListener('window:resize')
+  onResize() {
     this.boundariesRect = new BoundariesRect(0, 0, window.innerWidth, window.innerHeight);
   }
 }

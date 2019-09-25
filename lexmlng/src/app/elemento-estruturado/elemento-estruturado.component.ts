@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Element, ElementsService } from '../model/elements.service';
 
 @Component({
   selector: 'lexml-elemento-estruturado',
@@ -7,16 +8,17 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ElementoEstruturadoComponent implements OnInit {
 
-  @Input() elementId: string;
+  @Input() element: Element;
 
-  constructor() { }
+  constructor(private elementService: ElementsService) { }
 
   ngOnInit() {
+    
   }
 
   printElement() {
-    console.log(this.elementId, document.getElementById(this.elementId));
-    console.log('coordenadas', document.getElementById(this.elementId).getBoundingClientRect())
+    console.log(this.element.id, document.getElementById(this.element.id));
+    console.log('coordinates', document.getElementById(this.element.id).getBoundingClientRect());
   }
 
 }
