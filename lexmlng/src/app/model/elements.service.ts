@@ -17,7 +17,6 @@ export class ElementsService {
     for (let i = 0; i < elementCount; i++) {
       elements.push(new Element(i, prefix));
     }
-    
     return elements;
   }
 }
